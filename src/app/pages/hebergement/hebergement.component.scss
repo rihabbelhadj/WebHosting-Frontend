@@ -1,0 +1,24 @@
+.test{
+  background-color: aquamarine !important;
+}
+.card-title {
+  padding-left: 30%;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.cardTest:hover{
+  transform:scale(1.1) ;
+}
+.cardTest {
+  transition: transform 0.2s ease;
+}
+.cardTest {
+ // box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+  border-radius: 0;
+  border: 0;
+}
+.row{
+  padding-top: 5%;
+}

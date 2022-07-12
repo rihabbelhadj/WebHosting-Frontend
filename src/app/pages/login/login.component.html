@@ -1,0 +1,42 @@
+<div class="full section section-tabs" >
+  <div class="container">
+    <div class="row" style="padding-top: 40px;">
+      <div class="col-md-10 ml-auto col-xl-10 mr-auto">
+        <div class="card">
+          <div class="nav-tabs-navigation">
+            <div class="row">
+              <div class="col-5 fullImage imageBackground"></div>
+              <div class="col-7 formlogin">
+                <div class="content-center1">
+                  <h3 class="text-center title">Bienvenue à Web Hosting</h3>
+                  <p class="text-center  description">Joindre la solutions la plus utilisé par
+                   hébergement Web.</p>
+                  <br>
+                  <br>
+                  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                    <div >
+                      <input class="form-control" name="UserName"  formControlName="userName" placeholder="UserName" type="text" value="">
+                    </div>
+                    <div >
+                      <input  class="form-control" formControlName="password" type="password"  name="password"  placeholder="Mot de passe"
+                             value="">
+                    </div>
+                    <div >
+                      <button type="submit"  [disabled]="!loginForm.valid" class="btn btn-primary btn-round btn-block">S'authentifier</button>
+                    </div>
+                  </form>
+                  <br>
+                  <br>
+                  <p class="text-center  description">Vous n'avez pas un compte ? <a href="#">contactez-nous</a></p>
+                  <br>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

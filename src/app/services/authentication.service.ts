@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import {User} from '../models/user';
+import {BehaviorSubject} from 'rxjs';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -13,6 +15,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
+
+  private _loggedUser = new BehaviorSubject<User>({});
+  public loggedUser = this._loggedUser.asObservable();
 
  public host = 'https://localhost:7086/api/Users/Login';
   public jwt: string;
@@ -32,15 +37,20 @@ export class AuthenticationService {
   }
 
   public login(userName : string, password: string) {
-   // return this.httpClient.post(this.host + '/login', data, { observe: 'response' });
+    // return this.httpClient.post(this.host + '/login', data, { observe: 'response' });
     // @ts-ignore
     const body = {
-      UserName : userName,
+      UserName: userName,
       Password: password,
     }
-   return  this.httpClient.post(this.host , body);
-  }
+    return this.httpClient.post(this.host, body);
+    //  localStorage.setItem('role', localStorage.getItem('user'));
 
+
+  }
+  public setLoggedUser = (user: User) => {
+    this._loggedUser.next(user);
+  }
 
   public saveToken(jwt) {
     localStorage.setItem('token', jwt);
@@ -106,8 +116,9 @@ export class AuthenticationService {
     this.parseJWT();
   }
   logOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('isconvert');
+    localStorage.removeItem('user');
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('UserDetail');
     this.initParams();
   }
 

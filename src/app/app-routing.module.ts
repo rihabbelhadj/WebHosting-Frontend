@@ -10,6 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeAdminComponent } from './components/home-admin/home-admin.component';
 import {DashboardClientComponent} from './components/dashboard-client/dashboard-client.component';
+import {AuthGuardGuard} from './guard/AuthGuardGuard';
 
 
 const routes: Routes = [
@@ -19,9 +20,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   {path : 'hebergement-des-sites' , component: HebergementComponent},
   {path: 'login' , component: LoginComponent},
-  {path: 'Admin-home', component: HomeAdminComponent},
-  {path: 'Client-home', component: DashboardClientComponent},
-  {path: 'Dashboard-Admin', component: DashboardComponent}
+  {path: 'home', component: HomeAdminComponent,  canActivate: [AuthGuardGuard]},
+  {path: 'Client-home', component: DashboardClientComponent, canActivate: [AuthGuardGuard]},
+  {path: 'Dashboard-Admin', component: DashboardComponent }
 
 ];
 

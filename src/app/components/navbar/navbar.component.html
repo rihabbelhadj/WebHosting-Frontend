@@ -44,13 +44,13 @@
           </a>
         </li>
 
-        <li (click)="OnDeconnexion()"  class="nav-item cursor" *ngIf="isAuthentificated()">
+        <li (click)="OnDeconnexion()"  class="nav-item cursor">
           <a class="nav-link">
             <i class="now-ui-icons media-1_button-power"></i>
             <p>Déconnecter</p>
           </a>
         </li>
-        <li *ngIf="!isAuthentificated()" class="nav-item">
+        <li *ngIf="!isUserLoggedIn()" class="nav-item">
           <a class="nav-link" [routerLink]="'/login'">
             <i class="now-ui-icons business_badge"></i>
             <p>Authentification</p>

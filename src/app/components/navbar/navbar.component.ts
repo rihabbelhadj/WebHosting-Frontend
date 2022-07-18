@@ -1,6 +1,7 @@
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,11 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
+  private userName: string;
+  private password: string;
+  private loginStatus: string;
+  loggedUser: User;
+  isLoggedIn = false;
 
   constructor(private auth:AuthenticationService,private router:Router) {
       this.sidebarVisible = false;
@@ -18,12 +24,22 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
 
   }
-  sidebarOpen() {
+  /*isUserLoggedIn() {
+    const user = JSON.parse(<string> localStorage.getItem('user'));
+    if (user) {
+      this.auth.setLoggedUser(user);
+      this.loggedUser = user;
+      this.isLoggedIn = true;
 
-  }
-  sidebarClose() {
+    }
 
-  }
+
+  }*/
+  isUserLoggedIn(){
+    if( (JSON.parse(localStorage.getItem('UserDetail'))) != null)
+    {
+      return this.isLoggedIn=true;
+    }}
   sidebarToggle() {
 
   }
@@ -32,10 +48,13 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  isAuthentificated()
+  /*isAuthentificated()
   {
-    return this.auth.isAuthentificated();
-  }
+    this.auth.login(this.userName, this.password).subscribe((data)=>{
+      this.loginStatus = status;
+      console.log('response', data);
+    });
+  }*/
   OnDeconnexion() {
     console.log("Deconnexion");
     this.auth.logOut();

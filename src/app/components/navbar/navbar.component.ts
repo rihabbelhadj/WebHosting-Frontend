@@ -1,5 +1,5 @@
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { Router } from '@angular/router';
 import {User} from '../../models/user';
 
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
   constructor(private auth:AuthenticationService,private router:Router) {
       this.sidebarVisible = false;
   }
-
+  @Output() navbarEventEmitter: EventEmitter<any> = new EventEmitter();
   ngOnInit() {
 
   }
@@ -40,21 +40,10 @@ export class NavbarComponent implements OnInit {
     {
       return this.isLoggedIn=true;
     }}
-  sidebarToggle() {
-
+  toggleNavbar() {
+    this.navbarEventEmitter.emit(null);
   }
 
-  isDocumentation() {
-
-  }
-
-  /*isAuthentificated()
-  {
-    this.auth.login(this.userName, this.password).subscribe((data)=>{
-      this.loginStatus = status;
-      console.log('response', data);
-    });
-  }*/
   OnDeconnexion() {
     console.log("Deconnexion");
     this.auth.logOut();

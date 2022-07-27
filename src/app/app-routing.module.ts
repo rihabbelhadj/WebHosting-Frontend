@@ -11,6 +11,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeAdminComponent } from './components/home-admin/home-admin.component';
 import {DashboardClientComponent} from './components/dashboard-client/dashboard-client.component';
 import {AuthGuardGuard} from './guard/AuthGuardGuard';
+import {UserComponent} from './pages/user/user.component';
+import {ServeurComponent} from './pages/serveur/serveur.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path: 'login' , component: LoginComponent},
   {path: 'home', component: HomeAdminComponent,  canActivate: [AuthGuardGuard]},
   {path: 'Client-home', component: DashboardClientComponent, canActivate: [AuthGuardGuard]},
-  {path: 'Dashboard-Admin', component: DashboardComponent }
+  {path: 'Dashboard-Admin', component: DashboardComponent },
+  {path: 'user', component: UserComponent},
+  {path:'serveur',component:ServeurComponent}
 
 ];
 

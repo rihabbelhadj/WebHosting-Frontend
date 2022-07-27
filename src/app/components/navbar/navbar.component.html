@@ -10,9 +10,7 @@
       </div>
 
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
-        (click)="sidebarToggle()">
+      <button class="navbar-toggler"  id="menu-button"  type="button" (click)="toggleNavbar()">
         <span class="navbar-toggler-bar bar1"></span>
         <span class="navbar-toggler-bar bar2"></span>
         <span class="navbar-toggler-bar bar3"></span>
@@ -44,7 +42,7 @@
           </a>
         </li>
 
-        <li (click)="OnDeconnexion()"  class="nav-item cursor">
+        <li *ngIf="isUserLoggedIn()"(click)="OnDeconnexion()"  class="nav-item cursor">
           <a class="nav-link">
             <i class="now-ui-icons media-1_button-power"></i>
             <p>Déconnecter</p>

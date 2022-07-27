@@ -38,7 +38,12 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/js/chart.sample.min.js",
+              "src/assets/js/chart.sample.min.js",
+              "src/assets/js/main.min.js",
+              "src/assets/js/main.js",
+             "src/assets/js/my_chart.js"
             ]
           },
           "configurations": {

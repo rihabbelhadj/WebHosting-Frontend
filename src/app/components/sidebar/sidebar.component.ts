@@ -27,4 +27,8 @@ isAdmin:boolean;
     }
   // else return this.
   }
+
+  toggle() {
+
+  }
 }

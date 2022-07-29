@@ -1,58 +1,34 @@
 
 
-<div class="wrapper" style="padding-top: 6%">
-  <!--div class="card" style="width: 100%">
-
-    <div class="card-body" style="background-color: dodgerblue;">
-      <h5 class="card-title" >Hébergement Web Mutualisé </h5>
-
-
-    </div>
-  </div-->
-
-  <div class="row" >
-    <div class="cardTest">
-    <div  style="padding-left: 2%;">
-      <div class="card text-center">
-        <div class="pricing card-header p-5 bg-light-gradient d-flex align-items-center flex-column">
-          <h4 class="">Hébergement Perso</h4>
+<div class="wrapper" style="padding-top: 6%;margin-left: 10%;display: flex;justify-content: space-between">
+  <div class="row"  >
+    <div class="cardTest"  style="display: flex;justify-content: space-between">
+    <div  style="padding-left: 2%;display: flex;justify-content: space-between">
+      <div class="card text-center" *ngFor="let service of servList" style="display: flex;justify-content: space-between ;margin-right: 5%">
+        <div class="pricing card-header p-5 bg-light-gradient d-flex align-items-center flex-column" style ="height: 45%;">
+          <h4 >{{service.typeHebergement}}</h4>
+          {{service.serviceName}}
 
         </div>
         <ul class="list-group list-group-flush">
-          <li class="pricing__table pricing__table--positive plus">Domaine offert la 1ère année<sup></sup></li>
-          <li class="pricing__table pricing__table--positive plus">Disque SSD et Trafic <b>ILLIMITÉS</b></li>
-
+          <li>À partir de</li>
+          <li class="pricing__table pricing__table--positive plus"><b style="color: #1D62F0">{{service.prix}}</b><sup></sup></li>
+          <li>HT/mois</li>
+          <li>Abonnement 12 Mois<li>
+          <li>Domaine gratuit 1 an</li>
+          <li class="pricing__table pricing__table--positive plus">{{service.espaceDisque}}</li>
+          <li>{{service.traficMesuel}}</li>
+          <li>{{service.bandePassante}}</li>
+          <li>{{service.nbEmail}} Emails</li>
+          <li>Certificat SSl <b>Gratuit</b></li>
         </ul>
         <div class="card-body">
-          <a class="btn btn-outline-secondary"><i class="far fa-cart-plus"></i> Commander </a>
+          <a class="btn btn-outline-secondary" style="background: #0073EC;color: #fff;border: solid 1px #0073EC;border-radius: 30px;"><i class="far fa-cart-plus" style=""></i> Commander </a>
         </div>
       </div>
     </div>
     </div>
-    <div class="cardTest">
-    <div  style="padding-left: 2%;"  >
-      <div class="card text-center">
-        <div class="pricing card-header p-5 bg-primary-gradient text-contrast d-flex align-items-center flex-column">
-          <h4 class="text-contrast">Hébergement Plus</h4>
 
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="pricing__table pricing__table--positive plus">Domaine offert la 1ère année<sup>*</sup></li>
-          <li class="pricing__table pricing__table--positive plus">Disque SSD et Trafic <b>ILLIMITÉS</b></li>
-
-
-        </ul>
-
-        <div class="card-body">
-          <a  class="btn btn-outline-secondary"><i class="far fa-cart-plus"></i> Commander </a>
-        </div>
-      </div>
-    </div>
-      </div>
-
-
-
-  </div>
 </div>
 
 

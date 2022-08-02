@@ -12,6 +12,8 @@ import {Service} from '../../models/service';
 })
 export class HebergementComponent implements OnInit {
   private servList: Service[];
+
+
   constructor(public servicesService : ServicesService,private http:HttpClient ) { }
 
   ngOnInit() {

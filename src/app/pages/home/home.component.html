@@ -11,11 +11,14 @@
         <h3>Hébergement Web</h3>
         <div class="jp_header_form_wrapper">
         <div class="input-group">
-          <input type="search" class="form-control rounded" placeholder="mondomaine.tn" aria-label="Search" aria-describedby="search-addon"  style="
+          <input type="search" class="form-control rounded" placeholder="mondomaine.tn" id="searchInput" #searchInput aria-label="Search" aria-describedby="search-addon"  style="
            margin-top: 1.5%; width: 100%; height: 50px; border-radius: 15px; background-color: white; border: transparent;"/>
+          <div *ngFor="let domain of domaineList ">
+          {{domain.domainName}}
+          </div>
           <button type="button" class="btn btn-outline-primary" style="   padding-left: 3%; margin-left: 3%; margin-top: 1.5%;
            margin-bottom: revert;background: #23c0e9;color: #ffffff;
-            width:20%;text-align: center;font-weight: bold;font-size: 16px;">
+            width:20%;text-align: center;font-weight: bold;font-size: 16px;"  (click)="searchdomaines(searchInput.value)" >
             <i class="fa fa-search" style="padding-right:10px"></i>search</button>
         </div>
         </div>

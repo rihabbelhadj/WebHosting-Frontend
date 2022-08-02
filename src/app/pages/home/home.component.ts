@@ -2,6 +2,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NavbarComponent } from './../../components/navbar/navbar.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import {UserService} from '../../services/user.service';
+import {HttpClient} from '@angular/common/http';
+import {DomaineService} from '../../services/domaine.service';
+import {User} from '../../models/user';
+import {Domaine} from '../../models/domaine';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +14,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  domaineList: Domaine[];
   @ViewChild(NavbarComponent, { static: false }) navbar: NavbarComponent;
+  domain: Domaine[];
 
-  constructor(private auth: AuthenticationService, private router: Router) { }
+  constructor(private auth: AuthenticationService, private router: Router, public domaineService : DomaineService,private http:HttpClient) { }
 
   ngOnInit() {
   }
@@ -26,4 +33,9 @@ export class HomeComponent implements OnInit {
 
   }
 
+  searchdomaines(value: string) {
+    this.domaineService.getAllDomaines().subscribe(data =>{
+      this.domaineList =data;
+    })
+  }
 }

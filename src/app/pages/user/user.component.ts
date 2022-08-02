@@ -17,12 +17,15 @@ export class UserComponent implements OnInit {
   key : string='id';
   reverse:boolean =false;
   p:number =1;
+  private totalRecords: number;
 
   constructor( public userService : UserService,private http:HttpClient ,  private toastr: ToastrService) { }
 
   ngOnInit() {
    this.userService.getAllUsers().subscribe(data =>{
      this.userList =data;
+     this.totalRecords = this.userList.length;
+     console.log('length:'+this.totalRecords)
    })
   }
 
@@ -37,6 +40,7 @@ export class UserComponent implements OnInit {
     this.userService.addUsers(data).subscribe((result) =>{
       console.log(result);
       this.toastr.success('Sccess Add', 'You have been  successfully add a new user');
+      this.ngOnInit();
     });
     console.log(data);
   }

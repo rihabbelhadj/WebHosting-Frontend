@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'node_modules/Chart.js';
+import {UserService} from '../../services/user.service';
+import {User} from '../../models/user';
+import {ServeurService} from '../../services/serveur.service';
+import {Serveur} from '../../models/serveur';
+import {ServicesService} from '../../services/services.service';
+import {Service} from '../../models/service';
 export interface BarChartDataset {
   data: number[];
   label: string;
@@ -16,8 +22,11 @@ export interface BarChartDataset {
 
 })
 export class DashboardComponent implements OnInit {
+  servList :Serveur[] =[];
+  serviList :Service[] =[];
   private isAdmin: boolean;
   private isClient: boolean;
+  private userList: User[];
   public chartOptions: any;
   public chartType: string = 'line';
   public chartLabels: string[] = ['Jul 14', 'Jul 15', 'Jul 16', 'Jul 17'];
@@ -34,52 +43,28 @@ export class DashboardComponent implements OnInit {
         borderWidth: 1
       },
     ];
+  private totalRecords: number;
+  private totalserv: number;
+  private totalService: number;
 
-  constructor() { }
+  constructor(public userService : UserService , private servService:ServeurService , public servicesService : ServicesService) { }
 
   ngOnInit() {
-  /*  const canvas = document.getElementById('myChart') as HTMLCanvasElement | null;
-  if (canvas != null){
-    const ctx = canvas.getContext('2d');
-    console.log(ctx);
-  }
+    this.userService.getAllUsers().subscribe(data =>{
+      this.userList =data;
+      this.totalRecords = this.userList.length;
+      //console.log('length:'+this.totalRecords)
+    })
+    this.servService.getAllServeur().subscribe(res =>{
+      this.servList=res;
+      this.totalserv=this.servList.length;
 
-    const ctx = canvas.getContext('2d');
-   // var ctx = document.getElementById("myChart").getContext("2d");
-    var myChart = new Chart("ctx", {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });*/
+    });
+
+    this.servicesService.getAllService().subscribe(data =>{
+      this.serviList =data;
+      this.totalService=this.serviList.length;
+    })
   }
 
   chekoutAdmin() {

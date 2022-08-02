@@ -8,3 +8,147 @@
       <li class="breadcrumb-item active">Serveur</li>
     </ol>
   </nav>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Serveur</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" style="  margin-left: 80%;    background-color: olivedrab;" data-toggle="modal" data-target="#addServeur">Add Serveur</button>
+    </div>
+  </nav>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Serveur ID</th>
+      <th scope="col">PlateForme Type</th>
+      <th scope="col">HostName</th>
+      <th scope="col">prix</th>
+      <th scope="col">number Autorisé</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let serveur of servList">
+      <th >{{serveur.idServeur}}</th>
+      <td>{{serveur.plateformeType}}</td>
+      <td>{{serveur.hostName}}</td>
+      <td>{{serveur.prix}}DT</td>
+      <td>{{serveur.nbAutorise}}</td>
+      <td>
+
+        <button type="button" class="btn  me-2" style=" background-color: #3a6dd9; color: #e6e6eb; border-color: blue;" data-toggle="modal" data-target="#EditServeur"(click)="editServeur(serveur)">Edit</button>
+        <button type="button" class="btn"style="background-color: #d62323;color: #f9f3f3;border-color: red;"(click)="deleteServeur(serveur)" >Delete</button>
+
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <!-- Add Serveur -->
+  <div class="modal fade" id="addServeur" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" >Add new Serveur</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="servDetail">
+
+            <div class="form-group">
+              <label for="exampleInputplattype">PlateformeType</label>
+              <input type="text"  formControlName ="plateformeType" class="form-control" id="exampleInputplattype" aria-describedby="emailHelp" placeholder="Enter email">
+
+            </div>
+            <div class="form-group">
+              <label for="exampleInputhost">HostName</label>
+              <input type="text" formControlName ="hostName" class="form-control" id="exampleInputhost" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleprix">Prix</label>
+              <input type="number"  formControlName="prix" class="form-control" id="exampleprix" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="examplenb">Number Authorized</label>
+              <input type="number" formControlName="nbAutorise" class="form-control" id="examplenb" placeholder="Password">
+            </div>
+
+
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="addServeur()">Add Serveur</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="EditServeur" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Edit Serveur details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="servDetail">
+            <!--div class="mb-3">
+              <label for="plateformeTypee">id</label>
+              <input type="text"  formControlName ="idServeur" class="form-control" id="plateformeTypee" aria-describedby="emailHelp" placeholder="idServeur">
+
+            </div-->
+            <div class="mb-3">
+              <label for="exampleInputplattype">PlateformeType</label>
+              <input type="text"  formControlName ="plateformeType" class="form-control" id="plateformeType" aria-describedby="emailHelp" placeholder="PlateformeType">
+
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputhost">HostName</label>
+              <input type="text" formControlName ="hostName" class="form-control" id="hostName" placeholder="HostName">
+            </div>
+            <div class="mb-3">
+              <label for="exampleprix">Prix</label>
+              <input type="number"  formControlName="prix" class="form-control" id="prix" placeholder="prix">
+            </div>
+            <div class="mb-3">
+              <label for="examplenb">Number Authorized</label>
+              <input type="number" formControlName="nbAutorise" class="form-control" id="nbAutorise" placeholder="Number Authorized">
+            </div>
+
+
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+              <button type="button" class="btn btn-outline-success" (click)="updateServeur()">Update</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- test> <!-->
+
+</div>
+

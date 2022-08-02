@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -82,7 +82,8 @@ import {Ng2OrderModule} from 'ng2-order-pipe';
         BrowserAnimationsModule,
         Ng2SearchPipeModule,
         NgxPaginationModule,
-        Ng2OrderModule
+        Ng2OrderModule,
+      AngularFontAwesomeModule
 
     ],
   providers: [],

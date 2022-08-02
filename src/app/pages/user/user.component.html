@@ -115,6 +115,7 @@
     <tr *ngFor="let user of userList|orderBy:key:reverse| paginate :{itemsPerPage :5,currentPage :p};">
 
       <th scope="row">{{user.firstName}}</th>
+
       <td>{{user.lastName}}</td>
       <td>{{user.email}}</td>
       <td><button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button></td>

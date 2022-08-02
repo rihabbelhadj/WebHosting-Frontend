@@ -23,6 +23,7 @@
     "@angular/router": "~8.2.9",
     "@auth0/angular-jwt": "^3.0.1",
     "@ng-bootstrap/ng-bootstrap": "^4.1.0",
+    "angular-font-awesome": "^3.1.2",
     "animate.css": "3.7.0",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.4",

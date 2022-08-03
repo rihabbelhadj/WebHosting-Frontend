@@ -7,6 +7,7 @@ import {Subject} from 'rxjs';
 import {Service} from '../models/service';
 import {Domaine} from '../models/domaine';
 import {map} from 'rxjs/operators';
+import {Payement} from '../models/payement';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,18 +20,18 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class DomaineService{
-  public host = 'https://localhost:7086/api/Domain';
+export class PayementService{
+  public host = 'https://localhost:7086/api/Payement';
   userApi = apiConfig.apis.user;
 
   constructor(private _http: HttpClient) {
   }
-  getAllDomaines(): Observable<Domaine[]> {
-    return this._http.get<Domaine[]>(this.host+'/GetAllDomaines');
+  getAllPayement(): Observable<Payement[]> {
+    return this._http.get<Payement[]>(this.host+'/GetAllDomaines');
   }
-  searchDomaine(query:string){
-    return this._http.get<Domaine[]>(this.host+'/GetDomainesByTitle?title='+query)}
-  getDomaineByUserId(id:string){
-    return this._http.get<Domaine[]>(this.host+'/GetDomain/ByUserId?id='+id);
+
+  getPayementByUserId(id:string):Observable<Payement[]>{
+    return this._http.get<Payement[]>(this.host+'/GetPayement/ByUserId?userId='+id);
   }
+
 }

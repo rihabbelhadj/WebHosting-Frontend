@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../services/user.service';
+import {ServeurService} from '../../services/serveur.service';
+import {ServicesService} from '../../services/services.service';
+import {DomaineService} from '../../services/domaine.service';
+import {Domaine} from '../../models/domaine';
+import {PayementService} from '../../services/payement.service';
+import {Payement} from '../../models/payement';
 
 @Component({
   selector: 'app-dashboard-client',
@@ -6,10 +13,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-client.component.scss']
 })
 export class DashboardClientComponent implements OnInit {
+  private userList: Domaine[];
+  private payementList:Payement[];
+  private totalRecords: number;
+  private totalPayement :number;
 
-  constructor() { }
+  constructor(public userService : UserService,private payementService:PayementService,private domainDService: DomaineService , private servService:ServeurService , public servicesService : ServicesService) { }
 
   ngOnInit() {
+    var id =JSON.parse(localStorage.getItem('userid'));
+    this.domainDService.getDomaineByUserId(id).subscribe(data =>{
+      this.userList =data;
+      this.totalRecords = this.userList.length;
+      console.log('length:'+this.totalRecords)
+    })
+    var id2 =JSON.parse(localStorage.getItem('userid'));
+    this.payementService.getPayementByUserId(id2).subscribe(data =>{
+      this.payementList =data;
+      console.log(data);
+      console.log(this.payementList.length)
+      this.totalPayement=this.payementList.length;
+      console.log( this.totalPayement);
+    })
   }
 
 }

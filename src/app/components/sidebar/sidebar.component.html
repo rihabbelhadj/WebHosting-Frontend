@@ -3,21 +3,19 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item" *ngIf="chekoutAdmin()" >
-        <a class="nav-link " [routerLink]="'/Dashboard-Admin'" routerLinkActive="active">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" [routerLink]="'/Dashboard-Admin'" routerLinkActive="active">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li>
-      <li class="nav-item" *ngIf="chekoutClient()" [routerLink]="'/Client-home'" routerLinkActive="active">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"  routerLinkActive="active">
-          <i class="bi bi-menu-button-wide"></i><span>Espace client</span><i class="bi bi-chevron-down ms-auto"></i>
+      <li class="nav-item" *ngIf="chekoutClient()" >
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"  routerLinkActive="active"  [routerLink]="'/Client-home'">
+          <span>Espace client</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
-        </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link " [routerLink]="'/user-profile'" routerLinkActive="active">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" [routerLink]="'/user-profile'" routerLinkActive="active">
           <i class="bi bi-grid"></i>
           <span>User Profile</span>
         </a>

@@ -32,6 +32,9 @@ import { ServeurComponent } from './pages/serveur/serveur.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2OrderModule} from 'ng2-order-pipe';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { UserUpdateComponent } from './pages/user-profile/user-update/user-update.component';
+import { PrecommandeComponent } from './pages/precommande/precommande.component';
 
 
 @NgModule({
@@ -67,6 +70,12 @@ import {Ng2OrderModule} from 'ng2-order-pipe';
     ModalDialogComponent,
 
     ServeurComponent,
+
+    UserProfileComponent,
+
+    UserUpdateComponent,
+
+    PrecommandeComponent,
 
 
 

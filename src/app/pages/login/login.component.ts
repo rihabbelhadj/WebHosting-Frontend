@@ -53,7 +53,7 @@ public loginForm = this.formBuilder.group({
       localStorage.setItem('UserDetail', JSON.stringify(user.user));
 
       var test = JSON.parse(localStorage.getItem('UserDetail'));
-      localStorage.setItem('userRole', JSON.stringify(test.type));
+      localStorage.setItem('userRole', (test.type));
       console .log((localStorage.getItem('userRole')));
       if(JSON.stringify(localStorage.getItem('userRole')) !='client'){
         this.router.navigate(['/home']);

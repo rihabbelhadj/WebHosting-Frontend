@@ -1,0 +1,48 @@
+.background-image{
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://www.agence-churchill.fr/wp-content/uploads/2021/09/Choisir-son-nom-de-domaine-1020x450.jpeg') no-repeat center center fixed;
+  background-size:cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  height: 100vh;
+}
+.dtest{
+  height: 10%;
+  display: flex;
+  background: #3f51b5;
+  color:#fff;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.big-banner{
+  background-image: url('https://www.agence-churchill.fr/wp-content/uploads/2021/09/Choisir-son-nom-de-domaine-1020x450.jpeg') ;
+  background-size:cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  height: 100vh;
+}
+.search-box{
+  display: block;
+  margin:40px auto 0 auto;
+  padding: 10px 20px;
+  max-width: 600px;
+  width:95%;
+}
+.search-results{
+  max-width: 600px;
+  width:65%;
+  margin:20px auto 0 auto;
+  hr{
+    border:none;
+    height:1px;
+    background-color: lightgray;
+  }
+  p{
+    margin : 10px 0;
+  }
+}

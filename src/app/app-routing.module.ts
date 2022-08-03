@@ -13,6 +13,9 @@ import {DashboardClientComponent} from './components/dashboard-client/dashboard-
 import {AuthGuardGuard} from './guard/AuthGuardGuard';
 import {UserComponent} from './pages/user/user.component';
 import {ServeurComponent} from './pages/serveur/serveur.component';
+import {UserProfileComponent} from './pages/user-profile/user-profile.component';
+import {UserUpdateComponent} from './pages/user-profile/user-update/user-update.component';
+import {PrecommandeComponent} from './pages/precommande/precommande.component';
 
 
 const routes: Routes = [
@@ -26,7 +29,10 @@ const routes: Routes = [
   {path: 'Client-home', component: DashboardClientComponent, canActivate: [AuthGuardGuard]},
   {path: 'Dashboard-Admin', component: DashboardComponent },
   {path: 'user', component: UserComponent},
-  {path:'serveur',component:ServeurComponent}
+  {path:'serveur',component:ServeurComponent},
+  {path:'user-profile' , component:UserProfileComponent},
+  {path:'user-update', component:UserUpdateComponent},
+  {path:'pick-domaine',component:PrecommandeComponent}
 
 ];
 

@@ -6,6 +6,7 @@ import {apiConfig} from '../config/apiConfig';
 import {Subject} from 'rxjs';
 import {Service} from '../models/service';
 import {Domaine} from '../models/domaine';
+import {map} from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -27,4 +28,7 @@ export class DomaineService{
   getAllDomaines(): Observable<Domaine[]> {
     return this._http.get<Domaine[]>(this.host+'/GetAllDomaines');
   }
+  searchDomaine(query:string){
+    return this._http.get<Domaine[]>(this.host+'/GetDomainesByTitle?title='+query)}
+
 }

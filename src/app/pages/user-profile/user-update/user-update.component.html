@@ -1,0 +1,64 @@
+<app-sidebar></app-sidebar>
+<div class="pagetitle" style="padding-top:6%;padding-left: 20%">
+
+  <h1>User Profile</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">User Update</li>
+    </ol>
+  </nav>
+  <!--update><!-->
+  <br><br><br>
+  <form style="padding-left: 5%;padding-right: 5%" [formGroup]="userDetail">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="firstName">First Name</label>
+          <input id="firstName" type="text" class="form-control" formControlName="firstName" >
+        </div>
+        <div class="col-md-6">
+          <label for="firstName">Last Name</label>
+          <input id="lastName" type="text" class="form-control" formControlName="lastName" >
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <label >Email</label>
+          <input id="emailId" type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="col-md-6">
+          <label for="website">UserName</label>
+          <input id="website" type="text" class="form-control"formControlName="userName" >
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="mobile">Entreprise</label>
+          <input id="mobile" type="text" class="form-control" formControlName="entreprise">
+        </div>
+
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="address">phone</label>
+          <input id="address" type="text" class="form-control" placeholder={{phone}} formControlName="phone">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary btn-block" (click)="userupdate()"> Submit </button></div>
+        <div class="col-md-4"></div>
+      </div>
+
+
+    </div>
+  </form>
+
+</div>

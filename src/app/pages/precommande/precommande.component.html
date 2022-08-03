@@ -1,0 +1,42 @@
+<div class="big-banner">
+<div class="card" style="margin-top:20%;padding-left:10%;color: white;margin-left: 5%;width:80rem;background-color: #060b156e;">
+  <div class="card-body">
+
+    <h1> <b> Choice of domain name</b></h1>
+  </div>
+</div>
+<div class="card" style="width: 60rem; margin-left:20%">
+  <div class="card-body">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        <h6 class="card-subtitle mb-2 text-muted">Register a new domain name</h6>
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+      <label class="form-check-label" for="flexRadioDefault2">
+        <h6 class="card-subtitle mb-2 text-muted">I will use my existing domain name and update my DNS nameservers</h6>
+      </label>
+    </div>
+     <!--input type="text" name="search-box" class="search-box" (keyup)="sendData($event)"-->
+     <input type="text" name="search-box" class="search-box" id="searchInput" #searchInput style="float: left">
+      <button style="margin-top: 40px;padding: 10px"><a (click)="searchDomaine(searchInput.value)" style="cursor: pointer"><i class="fa fa-search"></i> Search</a></button>
+
+
+
+    <section class="search-results">
+     <p *ngIf ="domaines.length <1"> Sorry, Nothing Found.</p>
+      <ng-template ngFor let-domain [ngForOf]="domaines" let-i="index">
+        <hr *ngIf="i >0"/>
+        <p>{{domaines.length}}</p>
+      </ng-template>
+    </section>
+
+
+
+
+
+  </div>
+</div>
+</div>

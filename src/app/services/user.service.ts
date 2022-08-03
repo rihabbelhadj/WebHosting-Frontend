@@ -32,7 +32,7 @@ export class UserService {
     return this._http.delete(this.host+'/deleteUser/'+id);
   }*/
   updateUser(user:User){
-    return this._http.put(this.host+'/user',user);
+    return this._http.put(this.host+'/update',user);
   }
   deleteUser(user:User){
     return this._http.delete<User>(this.host+'/deleteUser?id='+user.id);
@@ -50,8 +50,8 @@ export class UserService {
     return this._http.get<User>(`${this.userApi}/byId?id=${companyId}`);
   }
 
-  getCompanyByUserId(userId: string | undefined): Observable<User> {
-    return this._http.get<User>(`${this.userApi}/CompByUserId?userId=${userId}`);
+  getUserByUserId(id:string): Observable<User> {
+    return this._http.get<User>(this.host+'/byId?id='+id);
   }
 
  /* createCompany(newCompany: User): Observable<User> {

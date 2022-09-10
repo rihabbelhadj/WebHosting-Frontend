@@ -1,0 +1,43 @@
+<div style="background-color: #c2cbcd;padding-bottom: 30%">
+<div class="card" style="margin-top:6%;background-color: #11388a;color: white;padding:1%">
+  <div class="card-body" style="font-size: x-large;">
+    You are almost there! Complete your order
+  </div>
+
+</div>
+
+<div class="card" style="width: 50%;margin-left: 20%;border-radius: 38px;background: #eff2f799;color: #17191c;font-size: 24px;text-align: center;font-weight: 400;">
+  <div class="card-body" style="background-color: #80808024;">
+    Choisissez un cycle de facturation
+  </div>
+</div>
+<div   class="row" style="padding-left:25%">
+
+  <div class="col-xs-1 col-md-3" *ngFor="let com of servList ">
+
+    <div class=" card panel-check-group row is-selected">
+      <div class="card-body" style="margin:5px">
+        <h5 class="card-title"><b>{{com.nbAnnee}} Année</b></h5>
+        <p class="card-text" style="font-size: 30px">{{com.prix}}DT</p>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary mt-auto"(click)="addCommande(com)">choisissez ceci</button>
+      </div>
+    </div>
+
+  </div>
+  <!--div class="card" style="width: 24rem;margin-left:10%">
+    <div class="card-body">
+      <h5 class="card-title">Résumé de la commande</h5>
+      <div>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+      </div>
+      <p class="card-text">TVA: </p>
+      <a class="card-link">Prochains paiements : </a>
+      <br>
+      <a  class="card-link">Total à payer aujourd'hui</a>
+    </div>
+  </div-->
+</div>
+
+</div>

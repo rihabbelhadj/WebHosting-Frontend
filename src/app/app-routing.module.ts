@@ -16,6 +16,11 @@ import {ServeurComponent} from './pages/serveur/serveur.component';
 import {UserProfileComponent} from './pages/user-profile/user-profile.component';
 import {UserUpdateComponent} from './pages/user-profile/user-update/user-update.component';
 import {PrecommandeComponent} from './pages/precommande/precommande.component';
+import {TypeFacturationComponent} from './pages/type-facturation/type-facturation.component';
+import {RegisterComponent} from './pages/register/register.component';
+import {PayementComponent} from './pages/payement/payement.component';
+import {ServiceComponent} from './pages/service/service.component';
+import {CommandeComponent} from './pages/commande/commande.component';
 
 
 const routes: Routes = [
@@ -32,7 +37,12 @@ const routes: Routes = [
   {path:'serveur',component:ServeurComponent},
   {path:'user-profile' , component:UserProfileComponent},
   {path:'user-update', component:UserUpdateComponent},
-  {path:'pick-domaine',component:PrecommandeComponent}
+  {path:'pick-domaine',component:PrecommandeComponent},
+  {path:'type-facturation',component:TypeFacturationComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'payement',component:PayementComponent},
+  {path:'services',component:ServiceComponent},
+  {path:'commande',component:CommandeComponent}
 
 ];
 

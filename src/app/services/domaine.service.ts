@@ -7,6 +7,7 @@ import {Subject} from 'rxjs';
 import {Service} from '../models/service';
 import {Domaine} from '../models/domaine';
 import {map} from 'rxjs/operators';
+import {Serveur} from '../models/serveur';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -33,4 +34,9 @@ export class DomaineService{
   getDomaineByUserId(id:string){
     return this._http.get<Domaine[]>(this.host+'/GetDomain/ByUserId?id='+id);
   }
+
+  postDomaine(dom:Domaine){
+    return this._http.post(this.host+'/AddDomain',dom);
+  }
+
 }

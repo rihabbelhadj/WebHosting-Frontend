@@ -8,29 +8,47 @@
 <div class="card" style="width: 60rem; margin-left:20%">
   <div class="card-body">
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <input class="form-check-input" type="radio"  [(ngModel)]="flexRadioDefault" name="flexRadioDefault" id="flexRadioDefault1"  [value]="1">
       <label class="form-check-label" for="flexRadioDefault1">
         <h6 class="card-subtitle mb-2 text-muted">Register a new domain name</h6>
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+      <input class="form-check-input" type="radio"   [(ngModel)]="flexRadioDefault" name="flexRadioDefault" id="flexRadioDefault2" checked  [value]="2">
       <label class="form-check-label" for="flexRadioDefault2">
         <h6 class="card-subtitle mb-2 text-muted">I will use my existing domain name and update my DNS nameservers</h6>
       </label>
     </div>
+    <div *ngIf="flexRadioDefault == 2" >
      <!--input type="text" name="search-box" class="search-box" (keyup)="sendData($event)"-->
-     <input type="text" name="search-box" class="search-box" id="searchInput" #searchInput style="float: left">
-      <button style="margin-top: 40px;padding: 10px"><a (click)="searchDomaine(searchInput.value)" style="cursor: pointer"><i class="fa fa-search"></i> Search</a></button>
+     <input  type="text" name="search-box" class="search-box" id="searchInput" #searchInput style="float: left ;border: solid 1px #0073EC;
+    border-radius: 30px;
+    background-color: white;" placeholder="enter your domain name" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="" data-original-title="Merci de renseigner votre domaine">
+      <button style="margin-top: 40px;padding: 10px ;margin-left: 4%;border-radius: 1801px;border: solid 1px #0073EC;;width: 15%;    background-color: #1aa8d6;
+    color: white;"><a (click)="searchDomaine(searchInput.value)" style="cursor: pointer"><i class="fa fa-search"></i> Search</a></button>
+    </div>
+    <div *ngIf="flexRadioDefault == 1" >
+      <!--input type="text" name="search-box" class="search-box" (keyup)="sendData($event)"-->
+      <input  type="text" name="search-box" class="search-box" id="searchInput1" #searchInput style="float: left ;border: solid 1px #0073EC;
+    border-radius: 30px;
+    background-color: white;" placeholder="set a domain name here" data-toggle="tooltip" data-placement="top" data-trigger="manual" title="" data-original-title="Merci de renseigner votre domaine">
+      <button style="margin-top: 40px;padding: 10px ;margin-left: 4%;border-radius: 1801px;border: solid 1px #0073EC;;width: 15%;    background-color: #1aa8d6;
+    color: white;"  [routerLink]="'/type-facturation'"><a (click)="postDomaine(searchInput.value)" style="cursor: pointer"><i class="fa fa-search"></i> Check</a></button>
+    </div>
 
 
-
-    <section class="search-results">
+    <section class="search-results" *ngIf="verif">
+      <table>
+        <tr>
      <p *ngIf ="domaines.length <1"> Sorry, Nothing Found.</p>
       <ng-template ngFor let-domain [ngForOf]="domaines" let-i="index">
-        <hr *ngIf="i >0"/>
-        <p>{{domaines.length}}</p>
+        <div>
+        <hr  *ngIf="i >0"/>
+        <p [routerLink]="'/type-facturation'" (click)="getDomaine(domain)">{{domain.domainName}}</p>
+        </div>
       </ng-template>
+        </tr>
+      </table>
     </section>
 
 

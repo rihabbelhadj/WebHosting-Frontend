@@ -14,14 +14,14 @@ isAdmin:boolean;
   }
 
   chekoutClient(){
-    if( (JSON.parse(localStorage.getItem('userRole'))) === 'client')
+    if( (localStorage.getItem('userRole')) === 'client')
     {
       return this.isClient=true;
     }
 
   }
   chekoutAdmin(){
-   if ( (JSON.parse(localStorage.getItem('userRole'))) === 'admin')
+   if ( localStorage.getItem('userRole') === 'admin')
     {
       return this.isAdmin = true;
     }

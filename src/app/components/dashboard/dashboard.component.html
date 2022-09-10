@@ -64,7 +64,7 @@
               <div class="d-flex justify-content-between align-items-start">
                 <div class="color-card">
                   <p class="mb-0 color-card-head">Commandes</p>
-                  <h2 class="text-white">2368</h2>
+                  <h2 class="text-white">2</h2>
                 </div>
                 <i class="card-icon-indicator mdi mdi-account-circle bg-inverse-icon-success"></i>
               </div>
@@ -94,97 +94,7 @@
 
 
 
-<div *ngIf="chekoutClient()" >
-<div class="pagetitle">
-  <h1>Dashboard</h1>
-  <nav>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
-      <li class="breadcrumb-item active">Espace client</li>
-    </ol>
-  </nav>
-</div>
-
-<div class="row" style ="margin-left:25% ; margin-right: 10%;">
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style=" color: #4e73df !important;">
-              Mes Services</div>
-
-            <!--div class="h5 mb-0 font-weight-bold text-gray-800"> Numero </div-->
-          </div>
-
-
-
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADx0lEQVRoge2ZT2gcZRjGn3dnbK0Y0VrbzMa22V3NJXjyD0h2qzloJVEriBLwUEHaQ2xKDwqKFMWDUAuCikSKFvyD4koOBin1YszuRkTjMQerzta02dlI6R+aVtOdncdDbaHdmck3M9+2l/3d9nvfed7n3e97l5kdoEOHDh2uJ3ItivT9eKzHbZrbCD4hQC+Ajf+HjgE4DmAWxCxS+MXOp+ejaLe1gb6p2rqGib0CjAIwFS75YpNrbf9hUFzVGm1rIFtxhkB+CeAWRSfj9oC1CyJelDqpOOZWIleu7QQ5CVXzkLftAevFqOaBNuxAprLwiFAOQe3IAJB9dsF6JW49rTuQm6mvF0oRauYJYM+K5os0wsJ6j1CTewHcqpJK4Q67kH43NKlII2vVP8/8tLghKEVbA71Tf3dTuFM1v5rv+Tg0gZSc5YwDHJEG7w9K09aAYbpPAlilSy8zU9tHYAcAkN4DQXn6jhBlWJdUtuy8LpSXL30W4N6gXG0NUNinQydXWhgD+MYVi4LNQfk6hzidVCBXcbZTxG+we4KuUfytViLSl5Et13j1GtmydInA2dK2A3LxxqxdLAQFtDXgUU7r0vLhr6CAlgYypdqbInxQh5YfFPkuKJZ4BnKlhf0UvJRUJwQKm5NBwfgNkJItO+9QsCe2hhoTduHOI0HBeA2QkivX36NgV2xbalwAvNfCEqLPwGXzbLd5CDAW9u0DUXeATGUrzgEKXkjkTAERvPVnPn1gxTxlxSKNbLr2ESjPJ3K2MssAR+1Cz0GVZLUjVKSRsZyDbTZPAb6G17xH1TygcIQenqI5b9Y/AzCSyN5FTpAQEXQBaAA4LsBRCg6bNCaPFDbYUQXDGyjSmDedT6DH/KyLxqPzWzaf0qB1mcDnzf65uVVdplsE8KyGOjOpG1ZvrQ5YZzRoXYFvA3cd+n11w+uaAGRb0gICTK9xzaHfCnecTarlh+8Qe103jwPyeGJ14fdL51PDc4PrlxJrBZW4eiFTqRWEKGkQnl46nxpe3Np9LqlWGC07kCLGkooSONx0lx9rt3nApwEC+WSS/NY4e+6po4OZf5PpqOE3A7fHFaPgmzVrTz/9x9Ddywk8RaKlAYGciKUkmFh7o/XMXH//hcSuIuB3hCIPsIDFTQ1r5Nf7pKHHljqtR0j4QRQBUr7a6Kafi/JSQictDdj5dAXEhyoXE/i0Wu++buaBgHuh226ydp/8x0kJEPRnLQHZX813vxrnpYROQp8HekvOQ4Z4o0AqT3AdgEUIpunJ+9Ut1s/XyGOHDh1C+A8HBzQhoJxN8gAAAABJRU5ErkJggg==">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Earnings (Monthly) Card Example -->
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-success shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-              Mes Domaines</div>
-            <!--div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div-->
-          </div>
-          <div class="col-auto">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADhklEQVRYhe2WQWgcdRTGf29226g1FYK1zGyXdnebHrSnghDizpaiCFZMcjCUHrWlXqqn1vbkuVIEA6JgW7wUhGDQRLwoHrq7NkWxF41B3ewQ0501BirVHlK7O8/DTOLszGaTtnszHww773vfvP83b9/+9w+b+L9DNirMXamlvQTDqLwosAdIB6kFwFHki0SjOVk5tOtGVw3su7qQuttMvCXwKpBcR+4JTHgGp51nrPmNGDA6JTPl2lCjmZgVOAEocD1INRQdUtFhoBFw14Gmwqh4/JAp1V56IAO5Yu11UfkU6FVhUg36ge8AEC44dupzJ5+aAi4BoHyrBv2iMgX0CvJZplw7eV8GMuXakIq869eVU07eGunrMV3gqM/p2Iq26TEWVDra12O6cwVzWFTeBBCVsfU6ETOw7+pCSlQuA4aKnHFs8x2Am8v1AWC7wKyTT/28op8/aM0KzKI8FmiYK5jnReUsYAhyeXdxyVzLQGwIsyX3InCsk+t7hcKHjm29tq6B3JVaWg1xgEQ3DQCNZKK555fBdC2aaP1ZCSNAQtDxOTt1pMVcqTatyACCXc1b5XAuU3ZtUYqqMu0UzMHW59xxhdFGMzkMvB810DIDKvICgCfGRFSoajzu33h/RHOi3qLvnx3RHKITwefhWC5qANgLkBDj+zaFdgIYWx7+PZZbfmQx0DwRX8Hza6lfO1Y2HGRL7t/Ao+2EXcDtqm31RsloBzb833Af2NqOjA7hEso2STT75wbTlXAqW3JvAdurttVVk60d8PgJwPOSB2JKldjwdQPRDnwNHDZUXwbGW9aHJeG/Qcp84+4WTy6BDgDTCMeqeeu3tfhsyVUAUXnFfx/9KGbAaHjjXtI4pzC68kCLhbBXf5Fng/A5lIvA82vxq1VE32tZMxxUDu26ofBx+2ZFoTaAIbI/IA525lexLbjiBgA83XIW+NN3K6ertiVV2xIVChHpVoBK3pwJND1RPhyHMBNc7Q3MF3bUVeUE4Inq25ly/RRA30PmNeCvqP5eYYgcMURWt/m25wGnYH6CyklARPV8rlifvHmnbtH69fwDsLdcfypbcjVbcpejfBDfCdeu5M2ZUHfWPhFVC+YHKjqCcEtFh8TjV+DpkKQI4Kn+GI478G3R8Uzo5FNTd2k8KXABf5dc3R/U4DjwFXAb5UuE4534B0bm2uLOXMl9oyvFNrGJEP4FCfFbpL/tcLsAAAAASUVORK5CYII=">        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Earnings (Monthly) Card Example -->
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-info shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-info text-uppercase mb-1" >Mes Demandes <i class="fas fa-comments" style="padding-left: 10px;color: #22c3e6"></i>
-            </div>
-
-            <div class="row no-gutters align-items-center">
-              <div class="col-auto">
-                <!--div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div-->
-              </div>
-
-            </div>
-            <div class="col-auto">
-
-              <!--img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACjElEQVRIie2VPUxTURTHf+e1tBAW11aD9CUmJoifYIwWLJg4OokkMuhGUIMORgcTE4yLIYoGo3GSGh0kLiZODny06AIDRCUStdUa+tiYhBbadxweJdD0C51M/C/33pNzzu/+3715F/6rjKRQMBD5uVfE6AZpB+rW8hIII6r2k3jLjpk/Ahya0qrFZasf6C0GB2xgsC7juzrWJplyAGPjYnHZCgOXgRXgnkBTqobaVA21Ak0IA8AqcDnhsoa25CAwYZ0R1ZfAIsLJWNA/VajAfGc1Y+tbYJuqdMRbfa8qc6Da4wxcK9YcIHbMNylwHUAMu6ecg3WACAcANJsuuSOAtCvr5KiEzGjyoxmdf2iOLzSWccAKgAevuxwgr74B5CKGPW1GkgOhUXXnJ+Q0A7Dqls5yXb22qwMAISIi7QiPAUW4knBb4SIO5L5To7dKNQ9ErMMKd9aWD74FfaOxoP8CQghYAs4GolZHLn/TXTejSQUQkfOo7lJDXqe8+gmgOi0N2NoF9AAehWfxFv+5TfCJ+UuiMqgwFm/xtwEU/N6q6txxW29UL69Hc5MVhds7M76+eF5dVjMv3FQNChzMxYod6C+QYRXdL8o+wED4gM0bNTQcD26fy28O4FGP2xYFSJcCzBoqHV9bfbMAZjQ5ArSpSjje6rtbZEOOA8PuFBWA6Vxs068C0aFUDc255gCq8ghA0Jv1Eet4KYCo9DkT58I4dRXIjCSfI3QBKwJhMeynKdE52+NKeZdkjyF6CpEvubOLtfjX+1YECI2qO+Gy+hF6yXddQFsGrDsZX2jEyHaDnMB5JxT4ocqkCKeB2r8ClFL9++Ruw2YYpXEjoKzdSvX9qP9zqpojiFb0Tvw7+g0laPE7RO/74gAAAABJRU5ErkJggg=="-->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-warning shadow h-100 py-2">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-              Factures</div>
-            <!--div class="h5 mb-0 font-weight-bold text-gray-800">18</div-->
-          </div>
-          <div class="col-auto">
-
-            <!--i class="fas fa-comments fa-2x text-gray-300"></i-->
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACrUlEQVRoge2Yv2sUQRTHP2+JiQGxWAS9RUHOdNFOlJiLkMI/wD8g2tmJpDEhYgSFNKIEO00jpPY/iCAmEa2MPw6CmFyM8bTJFiI582ufRbLx7rJ3t3vMbq7YTzX75s3s9+2bNzMspKSkpBwk4jeyr4tjCIPA4V3TH+AjyuPFy86LA1EXgp0AVCU78/M3cCTQSRhbyDl3khQWFgsAERXhCfA3yEmVka7ZlZ4khYVFanV0vV096m2uPweu7jpOLPQ5NxJTFpKaAQB0za70eJ71JikxIVlXeFjoc+6Cv4RqsNZhfQC2E5EVng6BQf+hbgDF886awJf4NUVmyW/UDQBA4X28WppAmfObDQMQlblGPkmjInsftXEGxGu5DIhu733UurtQWLIzxRzKtIm5wtDe7h2bv3hyFUJkIAxq6EOE5LsvHqDNbwTchcKjZpSFQVQqlvROBlQF4SbNiE8YtbyKTSXUXaiVEK8yA0bXbhLFrBanC73ON//ZSBHvTR5/MbuFS5nlckNbtUdLF7PoHCIVb6nMQKsXc8CtoDKAFi9mhX0BGF+zcRayWNa5hd4Tn8ttRosYYi3k0qmN4/PVxn1FXI/sdPEdcKGuU3yF/OlVv2xVG6NlQHlpTE5ERJgKskcKwNuWZ8CGEUXR2FB4GtQRKYCl/sySIiNmNEVAGFrMOctBXZGLuNCXeYQwAuxbjzGwBTq8mHPGazk0vWOcmf11FvVuqXIFcIBDzc5VxSbCD4EpQca/5jJ5Q/OmxIKRQ6c7n28vufYD0AFBVGGy03ZH893ddXesZseVE+kgq0XJte+D3gbQnZNsqOTaAMNxjCvH0FVCrwXYrsc37j9GAhAk6ALR8J9qs+PKMfVbZTLAHGQzMq4cIzXQabujJddGYMAX1mm79+Ial5KSktI6/ANlYOg28u913AAAAABJRU5ErkJggg==">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div *ngIf="chekoutClient()">
+<app-dashboard-client></app-dashboard-client>
 </div>
 

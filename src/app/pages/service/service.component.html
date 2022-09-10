@@ -1,0 +1,188 @@
+<app-sidebar></app-sidebar>
+<div class="pagetitle" style="padding-top:6%;padding-left: 20%">
+
+  <h1>Services</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Services</li>
+    </ol>
+  </nav>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Services</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" style="  margin-left: 80%;    background-color: olivedrab;" data-toggle="modal" data-target="#addServeur">Add Service</button>
+      </div>
+    </nav>
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Service ID</th>
+        <th scope="col">Service Type</th>
+        <th scope="col">Service Name</th>
+        <th scope="col">Espace Disque</th>
+        <th scope="col">Bande Passante</th>
+        <th scope="col">Trafic Mesuel</th>
+        <th scope="col">nombre mail</th>
+        <th scope="col">prix</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let service of servList">
+        <th >{{service.idService}}</th>
+        <td>{{service.typeHebergement}}</td>
+        <td>{{service.serviceName}}</td>
+        <td>{{service.espaceDisque}}</td>
+        <td>{{service.bandePassante}}</td>
+        <td>{{service.traficMesuel}}</td>
+        <td>{{service.nbEmail}}</td>
+        <td>{{service.prix}}</td>
+        <td>
+
+          <button type="button" class="btn  me-2" style=" background-color: #3a6dd9; color: #e6e6eb; border-color: blue;" data-toggle="modal" data-target="#EditServeur"(click)="editService(service)">Edit</button>
+          <button type="button" class="btn"style="background-color: #d62323;color: #f9f3f3;border-color: red;"(click)="deleteService(service)" >Delete</button>
+
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <!-- Add Serveur -->
+    <div class="modal fade" id="addServeur" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel" >Add new Service</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="servDetail">
+
+              <div class="form-group">
+                <label for="exampleInputplattype">ServiceName</label>
+                <input type="text"  formControlName ="ServiceName" class="form-control" id="exampleInputplattype" aria-describedby="emailHelp" placeholder="ServiceName">
+
+              </div>
+              <div class="form-group">
+                <label for="exampleInputhost">Service Type</label>
+                <input type="text" formControlName ="type" class="form-control" id="exampleInputtype" placeholder="Service Type">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputhost">Espace Disque</label>
+                <input type="text" formControlName ="espaceDisque" class="form-control" id="exampleInputhost" placeholder="Espace Disque">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputhost">Bande Passante</label>
+                <input type="text" formControlName ="bandePassante" class="form-control" id="exampleInputbande" placeholder="Bande Passante">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputhost">Trafic Mesuel</label>
+                <input type="text" formControlName ="trafic" class="form-control" id="exampleInputtrafic" placeholder="Trafic Mesuel">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputhost">nombre mail</label>
+                <input type="number" formControlName ="nbmail" class="form-control" id="exampleInputnbmail" placeholder="Nombre mail">
+              </div>
+              <div class="form-group">
+                <label for="exampleprix">Prix</label>
+                <input type="text"  formControlName="prix" class="form-control" id="exampleprix" placeholder="Password">
+              </div>
+
+
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="addService()">Add Service</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="EditServeur" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel2">Edit Service details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="servDetail">
+              <!--div class="mb-3">
+                <label for="plateformeTypee">id</label>
+                <input type="text"  formControlName ="idServeur" class="form-control" id="plateformeTypee" aria-describedby="emailHelp" placeholder="idServeur">
+
+              </div-->
+              <div class="mb-3">
+                <label for="exampleInputplattype">ServiceName</label>
+                <input type="text"  formControlName ="ServiceName" class="form-control" id="plateformeType" aria-describedby="emailHelp" placeholder="ServiceName">
+
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputhost">Service Type</label>
+                <input type="text" formControlName ="type" class="form-control" id="hostName" placeholder="Service Type">
+              </div>
+              <div class="mb-3">
+                <label for="exampleprix">Espace Disque</label>
+                <input type="text"  formControlName="espaceDisque" class="form-control" id="espacedisque" placeholder="espaceDisque">
+              </div>
+              <div class="mb-3">
+                <label for="exampleprix">Bande Passante</label>
+                <input type="text"  formControlName="bandePassante" class="form-control" id="bande" placeholder="bandePassante">
+              </div>
+              <div class="mb-3">
+                <label for="exampleprix">Trafic Mesuel</label>
+                <input type="text"  formControlName="trafic" class="form-control" id="trafic" placeholder="trafic">
+              </div> <div class="mb-3">
+                <label for="exampleprix">nombre mail</label>
+                <input type="number"  formControlName="nbmail" class="form-control" id="nb" placeholder="nbmail">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleprix">Prix</label>
+                <input type="text"  formControlName="prix" class="form-control" id="prixz" placeholder="prix">
+              </div>
+
+
+
+
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+                <button type="button" class="btn btn-outline-success" (click)="updateService()">Update</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- test> <!-->
+
+  </div>
+
+</div>

@@ -21,9 +21,13 @@
           <li>{{service.bandePassante}}</li>
           <li>{{service.nbEmail}} Emails</li>
           <li>Certificat SSl <b>Gratuit</b></li>
+
         </ul>
-        <div class="card-body">
-          <a class="btn btn-outline-secondary" style="background: #0073EC;color: #fff;border: solid 1px #0073EC;border-radius: 30px;" [routerLink]="'/pick-domaine'"><i class="fa-solid fa-cart-shopping"></i> Commander </a>
+        <div class="card-body" *ngIf="!isUserLoggedIn()">
+          <a class="btn btn-outline-secondary" style="background: #0073EC;color: #fff;border: solid 1px #0073EC;border-radius: 30px;" [routerLink]="'/login'" (click)="getPrecommande(service)"><i class="fa-solid fa-cart-shopping"></i> Commander </a>
+        </div>
+        <div class="card-body" *ngIf="isUserLoggedIn()">
+          <a class="btn btn-outline-secondary" style="background: #0073EC;color: #fff;border: solid 1px #0073EC;border-radius: 30px;" [routerLink]="'/pick-domaine'" (click)="getPrecommande(service)" ><i class="fa-solid fa-cart-shopping"></i> Commander </a>
         </div>
       </div>
     </div>

@@ -35,6 +35,11 @@ import {Ng2OrderModule} from 'ng2-order-pipe';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { UserUpdateComponent } from './pages/user-profile/user-update/user-update.component';
 import { PrecommandeComponent } from './pages/precommande/precommande.component';
+import { TypeFacturationComponent } from './pages/type-facturation/type-facturation.component';
+import {GooglePayButtonModule} from '@google-pay/button-angular';
+import { PayementComponent } from './pages/payement/payement.component';
+import { ServiceComponent } from './pages/service/service.component';
+import { CommandeComponent } from './pages/commande/commande.component';
 
 
 @NgModule({
@@ -77,10 +82,19 @@ import { PrecommandeComponent } from './pages/precommande/precommande.component'
 
     PrecommandeComponent,
 
+    TypeFacturationComponent,
+
+    PayementComponent,
+
+    ServiceComponent,
+
+    CommandeComponent,
+
 
 
   ],
     imports: [
+        GooglePayButtonModule,
         BrowserModule,
         AppRoutingModule,
         FormsModule,

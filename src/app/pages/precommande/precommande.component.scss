@@ -35,14 +35,15 @@
 }
 .search-results{
   max-width: 600px;
-  width:65%;
-  margin:20px auto 0 auto;
+  width: 65%;
+  margin: 5px;
+  background-color: #f1eded;
   hr{
     border:none;
     height:1px;
     background-color: lightgray;
   }
   p{
-    margin : 10px 0;
+    margin : 5px 0;
   }
 }

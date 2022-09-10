@@ -21,20 +21,22 @@ export class DashboardClientComponent implements OnInit {
   constructor(public userService : UserService,private payementService:PayementService,private domainDService: DomaineService , private servService:ServeurService , public servicesService : ServicesService) { }
 
   ngOnInit() {
-    var id =JSON.parse(localStorage.getItem('userid'));
+    var id =localStorage.getItem('id');
     this.domainDService.getDomaineByUserId(id).subscribe(data =>{
       this.userList =data;
       this.totalRecords = this.userList.length;
       console.log('length:'+this.totalRecords)
     })
-    var id2 =JSON.parse(localStorage.getItem('userid'));
-    this.payementService.getPayementByUserId(id2).subscribe(data =>{
+
+    this.payementService.getPayementByUserId(id).subscribe(data =>{
       this.payementList =data;
       console.log(data);
       console.log(this.payementList.length)
       this.totalPayement=this.payementList.length;
       console.log( this.totalPayement);
     })
+
+    this.domainDService
   }
 
 }

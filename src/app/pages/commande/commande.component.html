@@ -1,0 +1,41 @@
+<app-sidebar></app-sidebar>
+<div class="pagetitle" style="padding-top:6%;padding-left: 20%">
+
+  <h1>Commande</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Commande</li>
+    </ol>
+  </nav>
+
+<table class="table table-hover">
+  <thead>
+  <tr >
+    <th scope="col" >id Commande </th>
+    <th scope="col">nom de domaine</th>
+    <th scope="col">user id </th>
+    <th scope="col">Statut</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let comm of commList| paginate :{itemsPerPage :5,currentPage :p};">
+
+    <th scope="row">{{comm.idCommande}}</th>
+
+    <td>{{comm.dom.domainName}}</td>
+    <td>{{comm.dom.idDeBase}}</td>
+
+
+    <td *ngIf="comm.isValid==true"><button type="button" class="btn btn-outline-success" >Completed</button></td>
+    <td *ngIf="comm.isValid==false"><button type="button" class="btn btn-warning" >en Cours</button></td>
+
+
+
+
+  </tr>
+
+  </tbody>
+  <pagination-controls  (pageChange)="p=$event" ></pagination-controls>
+</table>
+</div>

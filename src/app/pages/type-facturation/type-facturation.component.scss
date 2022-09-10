@@ -1,0 +1,20 @@
+.card-title{
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  color: #1161fe;
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+
+#sectionCycles .panel-check .check>label {
+  padding: 10px 10px 35px;
+}
+.panel-check .check>:last-child {
+  margin-bottom: 0;
+}
+.panel-check .check>label {
+  display: flex;
+  width: 100%;
+  padding: var(--panel-check-padding);
+  cursor: pointer
+}

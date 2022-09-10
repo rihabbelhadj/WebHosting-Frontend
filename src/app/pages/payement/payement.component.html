@@ -13,11 +13,11 @@
           <div class="container">
             <div class="row">
               <div class="col-md-10 ml-auto col-xl-6 mr-auto">
-                <div class="card card-form">
+                <div class="card card-form" style="margin-top: 15%;">
                   <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
                       <h3 class="text-center title form-title">Terminer votre commande</h3>
-                      <google-pay-button environment="TEST" [buttonColor]="buttonColor" [buttonType]="buttonType"
+                      <google-pay-button  style="margin-top: 30%" environment="TEST" [buttonColor]="buttonColor" [buttonType]="buttonType"
                                          [buttonSizeMode]="isCustomSize ? 'fill' : 'static'" [paymentRequest]="paymentRequest" [style.width.px]="buttonWidth"
                                          [style.height.px]="buttonHeight" (loadpaymentdata)="onLoadPaymentData($event)"></google-pay-button>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="simplecard ">
                   <div class="nav-tabs-navigation" data-tabs-color="orange">
                     <div class="nav-tabs-wrapper">
-                      <img class="contact-image " src="assets/img/contact.png" alt="contact">
+                      <img class="contact-image " src="assets/img/img.png" alt="contact">
                     </div>
                   </div>
                 </div>

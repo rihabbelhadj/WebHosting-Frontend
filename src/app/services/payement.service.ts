@@ -8,6 +8,7 @@ import {Service} from '../models/service';
 import {Domaine} from '../models/domaine';
 import {map} from 'rxjs/operators';
 import {Payement} from '../models/payement';
+import {Commande} from '../models/commande';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -32,6 +33,9 @@ export class PayementService{
 
   getPayementByUserId(id:string):Observable<Payement[]>{
     return this._http.get<Payement[]>(this.host+'/GetPayement/ByUserId?userId='+id);
+  }
+  AddPayement(pay: Payement) {
+    return this._http.post(this.host + '/create', pay);
   }
 
 }

@@ -2,11 +2,17 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "src/assets/sass/light-bootstrap-dashboard.scss";
 
-html{
-  height: 100%;
+body, html {
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
 }
-.wrapper, .sidebar-collapse{
-  height: 100%;
+
+.my-container{
+  width: 100vw;
+  height: 100vh;
+
 }
 .toast-container .ngx-toastr {
   width: 388px !important;
